@@ -44,11 +44,13 @@ for iteration in xrange( number_of_iterations ) :
 	predicted_output = dot( x_vector , weights )
 	error = expected_output - one_step_rule( predicted_output )
 	errors.append( error )
+
 	weights = weights + learning_rate * error * x_vector
+	#print weights
 
 for x_vector, doesnt_matter  in training_data :
 	predicted_output = dot( x_vector , weights ) 
-	print str( x_vector[ :3 ] ) + " " + str( predicted_output ) + " " + str( one_step_rule( predicted_output ) )  
+	print str( x_vector ) + " " + str( predicted_output ) + " " + str( one_step_rule( predicted_output ) )  
 
 
 ylim( [ -1, 1 ] )

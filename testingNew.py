@@ -14,6 +14,8 @@ from dataFile import input_matrix
 #say that the matrix is m...
 
 
+t = open( "listMatrix.txt" , "w" )
+
 def mean( matrix , n , f , d ) :
 	temp = np.matrix( matrix[ 0 ][ 0 ] ).astype( np.float32 )
 	#computing the sum average of all the frames for the 'n' video samples
@@ -27,7 +29,9 @@ def mean( matrix , n , f , d ) :
  		weightMatrix[ i ] = temp 
  	#print temp 
  	#return the mean of the matrix
-
+ 	t.write( "hello" )
+ 	t.write( str( np.matrix( weightMatrix ).tolist( ) ) )
+ 	t.close( )
  	return np.matrix( weightMatrix )
 
 def max_values(  ) :
